@@ -23,9 +23,9 @@ const lastUpdate = localStorage.getItem('last-update');
 	count = fetchedLogs.length;
 
 	fetchedLogs.sort((a, b) => a.metadata.createdAt - b.metadata.createdAt);
-	const lastUpdate = Date.now();
-	localStorage.setItem('last-update', lastUpdate);
-	localStorage.setItem('logs', JSON.stringify(fetchedLogs));
+	// const lastUpdate = Date.now();
+	// localStorage.setItem('last-update', lastUpdate);
+	// localStorage.setItem('logs', JSON.stringify(fetchedLogs));
 	logs = fetchedLogs;
 
 	display_logs();

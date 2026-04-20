@@ -36,7 +36,7 @@ body::after {
 	animation-iteration-count: infinite;
 	z-index: 9999;
 	pointer-events: none;
-	background: repeating-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 3px, transparent 3px, transparent 6px);
+	background: repeating-linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08) 2px, transparent 2px, transparent 4px);
 }
 
 #title_sub {
