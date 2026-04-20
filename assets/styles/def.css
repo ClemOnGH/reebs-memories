@@ -1,0 +1,219 @@
+@font-face {
+	font-family: 'Eurostile';
+	src: url('/assets/fonts/eurostile.woff') format('woff');
+}
+
+:root {
+	--accent: hsl(190, 100%, 60%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	user-select: none;
+	color: var(--accent);
+	font-family: 'Eurostile';
+}
+
+body {
+	height: 100vh;
+	background: hsl(220, 90%, 1%);
+	padding: 1em;
+}
+
+body::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	animation-name: moveBg;
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	z-index: 9999;
+	pointer-events: none;
+	background: repeating-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 3px, transparent 3px, transparent 6px);
+}
+
+#title_sub {
+	text-align: center;
+}
+
+#log_list {
+	position: absolute;
+	transform: translateX(-50%);
+	top: 50px;
+	left: 50vw;
+	width: 90vw;
+	outline: 2px solid var(--accent);
+	box-shadow:
+		0 0 10px var(--accent),
+		0 0 50px hsl(from var(--accent) h s l / 0.3);
+	background: hsl(220, 100%, 2%);
+	overflow: auto;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	max-height: 80vh;
+	padding: 4px;
+	transition: height 250ms ease-out;
+}
+
+#log_list::-webkit-scrollbar {
+	display: none;
+}
+
+#error_no_logs_found {
+	display: block;
+	text-align: center;
+	position: absolute;
+	font-size: 48px;
+	color: hsla(0, 100%, 100%, 0.05);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.log-entry {
+	outline: 2px solid var(--accent);
+}
+
+.log-entry:not(:last-of-type) {
+	margin-bottom: 6px;
+}
+
+.log-metadata {
+	padding: 0.5em;
+	transition: background 150ms ease-out;
+}
+
+.log-entry.d .log-metadata {
+	border-bottom: 1px solid var(--accent);
+}
+
+.log-metadata * {
+	display: inline-block;
+	transition: color 150ms ease-out;
+}
+
+.log-entry-title::before {
+	content: '↧';
+	display: inline-block;
+	margin-right: 8px;
+	transition: transform 150ms ease-out;
+}
+
+.log-entry.d .log-entry-title::before {
+	transform: scaleY(-1);
+}
+
+.log-entry-recovery-date {
+	float: right;
+}
+
+.log-entry:hover:not(.d) .log-metadata {
+	background: var(--accent);
+}
+
+.log-entry:hover:not(.d) .log-metadata * {
+	color: hsl(220, 100%, 2%);
+}
+
+.log-entry-content {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition:
+		grid-template-rows 250ms ease-out,
+		margin 250ms ease-out;
+}
+
+.log-entry-content > div {
+	padding: 0 0.5em;
+}
+
+.log-entry.d .log-entry-content > div {
+	padding: 0.5em;
+}
+
+.log-entry.d .log-entry-content {
+	grid-template-rows: 1fr;
+}
+
+.log-entry-content > div {
+	overflow: hidden;
+}
+
+/* #log_list .log-entry .log-metadata {
+	transition: background 150ms ease-out;
+}
+#log_list .log-entry .log-metadata * {
+	transition: color 150ms ease-out;
+}
+
+#log_list .log-entry .log-entry-title::before {
+	content: '↧';
+	display: inline-block;
+	margin-right: 8px;
+	transition: transform 100ms ease-out;
+}
+
+#log_list .log-entry.a .log-entry-title::before {
+	transform: scaleY(-1);
+}
+
+#log_list .log-entry:hover:not(.d) .log-metadata {
+	cursor: pointer;
+	background: var(--accent);
+}
+
+#log_list .log-entry:hover:not(.d) .log-metadata * {
+	color: hsl(220, 100%, 2%);
+}
+
+#log_list .log-metadata p {
+	display: inline-block;
+}
+
+#log_list .log-metadata {
+	padding: 0.5em;
+}
+
+#log_list .log-entry-recovery-date {
+	float: right;
+}
+
+#log_list .log-entry .log-entry-content {
+	max-height: 0px;
+	overflow: hidden;
+	transition:
+		padding 150ms,
+		max-height 150ms;
+}
+
+#log_list .log-entry .log-entry-content > div {
+	margin: 0.5em;
+}
+
+#log_list .log-entry.a .log-entry-content {
+	border-top: 1px solid var(--accent);
+} */
+
+@keyframes moveBg {
+	from {
+		background-position: 50% 50%;
+	}
+	to {
+		background-position: 50% calc(50% + 6px);
+	}
+}
+
+@media screen and (max-height: 500px) {
+	#log_list {
+		top: 50px;
+		transform: translateX(-50%);
+		height: calc(100vh - 100px);
+	}
+}

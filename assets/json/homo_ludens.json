@@ -1,0 +1,48 @@
+{
+	"metadata": {
+		"title": "Homo Ludens",
+		"createdAt": 41836879420000,
+		"location": {
+			"system": "Sol",
+			"body": "Earth"
+		}
+	},
+	"conversation": [
+		{ "from": "???", "content": "Dis, tu vois cette étoile ?" },
+		{ "from": "re-bi", "content": "Hein ?" },
+		{ "from": "???", "content": "Celle-là. À environ... 22 degrés du sol, pile au sud-est vu l'heure qu'il est." },
+		{ "from": "re-bi", "content": "Euh... oui! Je la vois!" },
+		{ "from": "???", "content": "Cette étoile, on l'appelle Rigel, ou Beta Orionis pour les intellos." },
+		{ "from": "re-bi", "content": "Rigel ? Qu'est-ce qu'elle a d'important ?" },
+		{
+			"from": "???",
+			"content": " C'est l'étoile la plus brillante de la constellation d'Orion et la sixième plus brillante de toutes celles qu'on peut voir de nuit."
+		},
+		{ "from": "re-bi", "content": "Wouah!" },
+		{ "from": "re-bi", "content": "Tu y es déjà allé ?" },
+		{ "from": "???", "content": "Bien sûr! C'est une vue à ne pas rater." },
+		{ "from": "???", "content": "Et celle-là, tu la vois ? Beaucoup plus bas, elle touche presque le sol." },
+		{ "from": "re-bi", "content": "Oui! Tu m'en a déjà parlé, c'est Sirius!" },
+		{ "from": "???", "content": "C'est bien, tu apprends vite. Mais tu veux en voir une qui est vraiment importante ?" },
+		{ "from": "re-bi", "content": "Hm?" },
+		{ "from": "???", "content": "Laisse-moi voir... au sud-sud-est... elle doit se trouver... là! Minuscule mais tu devrais pouvoir la voir." },
+		{ "from": "re-bi", "content": "Je vois rien..." },
+		{ "from": "???", "content": "Regarde bien, il y en a quatres qui se chevauchent." },
+		{ "from": "re-bi", "content": "Celle-ci ?" },
+		{
+			"from": "???",
+			"content": "Presque! Celle-là c'est Zaurak. Un peu plus sur la droite il y a pi Eridani, puis Rana et enfin Ran, celle que je voulais te montrer."
+		},
+		{ "from": "re-bi", "content": "Je la vois, c'est bon! Mais elle est toute petite..." },
+		{ "from": "???", "content": "En effet. C'est une étoile naine orange. Mais tu sais ce qu'elle a de très important ?" },
+		{ "from": "re-bi", "content": "Non ?" },
+		{
+			"from": "???",
+			"content": "Il y a plus d'un millier d'années, c'était le système habitable le plus proche qu'on connaissait. Epsilon Eridani. L'Homme revait de pouvoir découvrir d'autres planètes pour toutes sortes de raisons. Certains pensaient que le réchauffement climatique deviendrait un problème majeur, d'autres pensaient que le problème venait de l'Homme et qu'il causerait sa propre perte et les quelques optimistes un peu attentionés - ceux qu'on refusait toujours d'écouter - disaient qu'un jour, l'Homme réussirait à conquérir l'univers. C'était un peu le bazar à l'époque..."
+		},
+		{ "from": "re-bi", "content": "..." },
+		{ "from": "???", "content": "T'inquiètes! On s'est tous mis d'accord depuis. C'est pour ça que je peux aller un peu partout dans la galaxie!" },
+		{ "from": "re-bi", "content": "Tu crois que je pourrais voler un jour ?" },
+		{ "from": "???", "content": "J'espère bien!" }
+	]
+}
