@@ -12,11 +12,11 @@ if (!JSON.parse(logs) || Date.now() - lastUpdate > 86400000) {
 }
 
 async function fetch_files() {
-	const res = await fetch('/assets/json/index.json');
+	const res = await fetch('/reebs-memories/assets/json/index.json');
 	const files = await res.json();
 	let fetchedLogs = [];
 	for (const file of files) {
-		const data = await fetch(`/assets/json/${file}`).then((r) => r.json());
+		const data = await fetch(`/reebs-memories/assets/json/${file}`).then((r) => r.json());
 		fetchedLogs.push(data);
 	}
 	logCounter.textContent = fetchedLogs.length;
@@ -30,7 +30,7 @@ async function fetch_files() {
 }
 
 function display_logs() {
-	logCounter.textContent = logs.length;
+	logCounter.textContent = JSON.parse(logs).length;
 	document.querySelector('#error_no_logs_found').remove();
 	logs.forEach((log) => create_new_entry(log));
 }
