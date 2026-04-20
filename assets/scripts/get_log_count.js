@@ -1,18 +1,18 @@
 let count = 0;
 const logCounter = document.querySelector('#title_sub_count');
 const logList = document.querySelector('#log_list');
-let logs = localStorage.getItem('logs') || null;
+// const logs = localStorage.getItem('logs') || null;
 const lastUpdate = localStorage.getItem('last-update');
 
-if (!logs || Date.now() - lastUpdate > 86400000) {
-	logs = JSON.parse(logs);
-	fetch_files();
-} else {
-	logs = JSON.parse(logs);
-	display_logs();
-}
+// if (!logs || Date.now() - lastUpdate > 86400000) {
+// 	logs = JSON.parse(logs);
+// 	fetch_files();
+// } else {
+// 	logs = JSON.parse(logs);
+// 	display_logs();
+// }
 
-async function fetch_files() {
+(async function fetch_files() {
 	const res = await fetch('../assets/json/index.json');
 	const files = await res.json();
 	let fetchedLogs = [];
@@ -29,7 +29,7 @@ async function fetch_files() {
 	logs = fetchedLogs;
 
 	display_logs();
-}
+})();
 
 function display_logs() {
 	logCounter.textContent = count || logs.length;
