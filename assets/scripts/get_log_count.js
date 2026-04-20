@@ -30,7 +30,7 @@ async function fetch_files() {
 }
 
 function display_logs() {
-	logCounter.textContent = JSON.parse(logs).length;
+	logCounter.textContent = logs.length;
 	document.querySelector('#error_no_logs_found').remove();
 	logs.forEach((log) => create_new_entry(log));
 }
