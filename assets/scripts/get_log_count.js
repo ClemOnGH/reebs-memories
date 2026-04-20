@@ -1,8 +1,9 @@
-let count = 0;
+let count = 0,
+	logs = [];
 const logCounter = document.querySelector('#title_sub_count');
 const logList = document.querySelector('#log_list');
 // const logs = localStorage.getItem('logs') || null;
-const lastUpdate = localStorage.getItem('last-update');
+// const lastUpdate = localStorage.getItem('last-update');
 
 // if (!logs || Date.now() - lastUpdate > 86400000) {
 // 	logs = JSON.parse(logs);
@@ -13,11 +14,11 @@ const lastUpdate = localStorage.getItem('last-update');
 // }
 
 (async function fetch_files() {
-	const res = await fetch('/reebs-memories/assets/json/index.json');
+	const res = await fetch('https://clemongh.github.io/reebs-memories/assets/json/index.json');
 	const files = await res.json();
 	let fetchedLogs = [];
 	for (const file of files) {
-		const data = await fetch(`/reebs-memories/assets/json/${file}`).then((r) => r.json());
+		const data = await fetch(`https://clemongh.github.io/reebs-memories/assets/json/${file}`).then((r) => r.json());
 		fetchedLogs.push(data);
 	}
 	count = fetchedLogs.length;
