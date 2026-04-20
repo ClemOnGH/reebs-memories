@@ -1,12 +1,14 @@
 let count = 0;
 const logCounter = document.querySelector('#title_sub_count');
 const logList = document.querySelector('#log_list');
-let logs = JSON.parse(localStorage.getItem('logs')) || null;
+let logs = localStorage.getItem('logs') || null;
 const lastUpdate = localStorage.getItem('last-update');
 
 if (!logs || Date.now() - lastUpdate > 86400000) {
+	logs = JSON.parse(logs);
 	fetch_files();
 } else {
+	logs = JSON.parse(logs);
 	display_logs();
 }
 
