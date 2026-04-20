@@ -2,10 +2,10 @@ console.clear();
 
 const logCounter = document.querySelector('#title_sub_count');
 const logList = document.querySelector('#log_list');
-const logs = JSON.parse(localStorage.getItem('logs'));
+const logs = localStorage.getItem('logs');
 const lastUpdate = localStorage.getItem('last-update');
 
-if (!logs || Date.now() - lastUpdate > 86400000) {
+if (!JSON.parse(logs) || Date.now() - lastUpdate > 86400000) {
 	fetch_files();
 } else {
 	display_logs();
