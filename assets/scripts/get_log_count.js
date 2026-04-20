@@ -13,11 +13,11 @@ const lastUpdate = localStorage.getItem('last-update');
 // }
 
 (async function fetch_files() {
-	const res = await fetch('../assets/json/index.json');
+	const res = await fetch('/reebs-memories/assets/json/index.json');
 	const files = await res.json();
 	let fetchedLogs = [];
 	for (const file of files) {
-		const data = await fetch(`../assets/json/${file}`).then((r) => r.json());
+		const data = await fetch(`/reebs-memories/assets/json/${file}`).then((r) => r.json());
 		fetchedLogs.push(data);
 	}
 	count = fetchedLogs.length;
