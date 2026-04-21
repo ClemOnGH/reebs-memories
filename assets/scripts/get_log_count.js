@@ -1,35 +1,54 @@
-let logs = [];
-// if (!logs || Date.now() - lastUpdate > 86400000) {
-// 	logs = JSON.parse(logs);
-// 	fetch_files();
-// } else {
-// 	logs = JSON.parse(logs);
-// 	display_logs();
-// }
-
-(async function fetch_files() {
-	const res = await fetch('https://clemongh.github.io/reebs-memories/assets/json/index.json');
-	const files = await res.json();
-	let fetchedLogs = [];
-	for (const file of files) {
-		const data = await fetch(`https://clemongh.github.io/reebs-memories/assets/json/${file}`).then((r) => r.json());
-		fetchedLogs.push(data);
+let logs;
+(async function init() {
+	logs = get_saved_logs();
+	const lastUpdated = get_last_update();
+	if (!logs || Date.now() - lastUpdated > 8640000000) {
+		logs = await retrieve_logs();
 	}
-	count = fetchedLogs.length;
-
-	fetchedLogs.sort((a, b) => a.metadata.createdAt - b.metadata.createdAt);
-	// const lastUpdate = Date.now();
-	// localStorage.setItem('last-update', lastUpdate);
-	// localStorage.setItem('logs', JSON.stringify(fetchedLogs));
-	logs = fetchedLogs;
-
 	display_logs();
 })();
 
+function get_saved_logs() {
+	try {
+		const savedLogs = localStorage.getItem('saved-logs');
+		return savedLogs ? JSON.parse(savedLogs) : null;
+	} catch (e) {
+		return null;
+	}
+}
+
+function get_last_update() {
+	try {
+		const lastUpdated = localStorage.getItem('last-updated');
+		return lastUpdated ? lastUpdated : null;
+	} catch (e) {
+		console.error(e);
+	}
+}
+
+async function retrieve_logs() {
+	const res = await fetch('https://clemongh.github.io/reebs-memories/assets/json/index.json');
+	const files = await res.json();
+	let fetched_logs = [];
+
+	for (const file of files) {
+		try {
+			const data = await fetch(`https://clemongh.github.io/reebs-memories/assets/json/${file}`).then((d) => d.json());
+			fetched_logs.push(data);
+		} catch (e) {
+			console.error(e);
+		}
+	}
+
+	fetched_logs.sort((a, b) => a.metadata.createdAt - b.metadata.createdAt);
+	localStorage.setItem('saved-logs', JSON.stringify(fetched_logs));
+	localStorage.setItem('last-updated', Date.now());
+	return fetched_logs;
+}
+
 function display_logs() {
-	document.querySelector('#title_sub_count').textContent = count || logs.length;
+	document.querySelector('#title_sub_count').textContent = logs.length;
 	document.querySelector('#error_no_logs_found').remove();
-	console.log(logs);
 	logs.forEach((log) => create_new_entry(log));
 }
 
@@ -43,8 +62,12 @@ function create_new_entry(entry) {
 
 	entry.conversation.forEach((line) => {
 		let newLine;
-		if (line.content === '[lb]') {
+		if (line.type === 'line-break') {
 			newLine = document.createElement('br');
+		} else if (line.type === 'image') {
+			newLine = document.createElement('img');
+			img.src = line.src;
+			img.classList.add('log-embedded-image');
 		} else {
 			newLine = document.createElement('p');
 			newLine.textContent = (line.from ? line.from + ': ' : '') + line.content;
