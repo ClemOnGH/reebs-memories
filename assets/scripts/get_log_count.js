@@ -1,10 +1,4 @@
-let count = 0,
-	logs = [];
-const logCounter = document.querySelector('#title_sub_count');
-const logList = document.querySelector('#log_list');
-// const logs = localStorage.getItem('logs') || null;
-// const lastUpdate = localStorage.getItem('last-update');
-
+let logs = [];
 // if (!logs || Date.now() - lastUpdate > 86400000) {
 // 	logs = JSON.parse(logs);
 // 	fetch_files();
@@ -33,7 +27,7 @@ const logList = document.querySelector('#log_list');
 })();
 
 function display_logs() {
-	logCounter.textContent = count || logs.length;
+	document.querySelector('#title_sub_count').textContent = count || logs.length;
 	document.querySelector('#error_no_logs_found').remove();
 	console.log(logs);
 	logs.forEach((log) => create_new_entry(log));
@@ -73,7 +67,7 @@ function create_new_entry(entry) {
 	metadataDiv.appendChild(dateP);
 	container.appendChild(metadataDiv);
 	container.appendChild(contentDiv);
-	logList.appendChild(container);
+	document.querySelector('#log_list').appendChild(container);
 
 	container.addEventListener('click', () => {
 		container.classList.toggle('d');
