@@ -1,8 +1,9 @@
 const clearLogs = document.querySelector('#clearLogs');
 
-clearLogs.addEventListener('click', (e) => {
+clearLogs.addEventListener('click', () => {
 	localStorage.clear('last-updated');
 	localStorage.clear('saved-logs');
+	window.location.reload();
 });
 
 let logs;
@@ -34,15 +35,13 @@ function get_last_update() {
 }
 
 async function retrieve_logs() {
-	// const res = await fetch('https://clemongh.github.io/reebs-memories/assets/json/index.json');
-	const res = await fetch('../assets/json/index.json');
+	const res = await fetch('https://clemongh.github.io/reebs-memories/assets/json/index.json');
 	const files = await res.json();
 	let fetched_logs = [];
 
 	for (const file of files) {
 		try {
-			// const data = await fetch(`https://clemongh.github.io/reebs-memories/assets/json/${file}`).then((d) => d.json());
-			const data = await fetch(`../assets/json/${file}`).then((d) => d.json());
+			const data = await fetch(`https://clemongh.github.io/reebs-memories/assets/json/${file}`).then((d) => d.json());
 			fetched_logs.push(data);
 		} catch (e) {
 			console.error(e);
