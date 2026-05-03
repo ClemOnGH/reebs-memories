@@ -1,3 +1,10 @@
+const clearLogs = document.querySelector('#clearLogs');
+
+clearLogs.addEventListener('click', (e) => {
+	localStorage.clear('last-updated');
+	localStorage.clear('saved-logs');
+});
+
 let logs;
 (async function init() {
 	logs = get_saved_logs();
@@ -27,13 +34,15 @@ function get_last_update() {
 }
 
 async function retrieve_logs() {
-	const res = await fetch('https://clemongh.github.io/reebs-memories/assets/json/index.json');
+	// const res = await fetch('https://clemongh.github.io/reebs-memories/assets/json/index.json');
+	const res = await fetch('../assets/json/index.json');
 	const files = await res.json();
 	let fetched_logs = [];
 
 	for (const file of files) {
 		try {
-			const data = await fetch(`https://clemongh.github.io/reebs-memories/assets/json/${file}`).then((d) => d.json());
+			// const data = await fetch(`https://clemongh.github.io/reebs-memories/assets/json/${file}`).then((d) => d.json());
+			const data = await fetch(`../assets/json/${file}`).then((d) => d.json());
 			fetched_logs.push(data);
 		} catch (e) {
 			console.error(e);
@@ -70,7 +79,7 @@ function create_new_entry(entry) {
 			img.classList.add('log-embedded-image');
 		} else {
 			newLine = document.createElement('p');
-			newLine.textContent = (line.from ? line.from + ': ' : '') + line.content;
+			newLine.innerHTML = (line.from ? line.from + ': ' : '') + line.content;
 		}
 		accordionContentDiv.appendChild(newLine);
 	});

@@ -31,10 +31,9 @@ body::after {
 	height: 100%;
 	width: 100%;
 	animation-name: moveBg;
-	animation-duration: 0.5s;
+	animation-duration: 0.3s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
-	z-index: 9999;
 	pointer-events: none;
 	background: repeating-linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08) 2px, transparent 2px, transparent 4px);
 }
@@ -48,6 +47,7 @@ body::after {
 	transform: translateX(-50%);
 	top: 50px;
 	left: 50vw;
+	max-height: calc(100vh - 100px);
 	width: 90vw;
 	outline: 2px solid var(--accent);
 	box-shadow:
@@ -57,9 +57,7 @@ body::after {
 	overflow: auto;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
-	max-height: 80vh;
 	padding: 4px;
-	transition: height 250ms ease-out;
 }
 
 #log_list::-webkit-scrollbar {
@@ -78,6 +76,7 @@ body::after {
 }
 
 .log-entry {
+	background: hsl(220, 90%, 1%);
 	outline: 2px solid var(--accent);
 }
 
@@ -100,9 +99,9 @@ body::after {
 }
 
 .log-entry-title::before {
-	content: '↧';
+	content: '⯆';
 	display: inline-block;
-	margin-right: 8px;
+	margin-right: 6px;
 	transition: transform 150ms ease-out;
 }
 
@@ -125,9 +124,7 @@ body::after {
 .log-entry-content {
 	display: grid;
 	grid-template-rows: 0fr;
-	transition:
-		grid-template-rows 250ms ease-out,
-		margin 250ms ease-out;
+	transition: grid-template-rows 250ms ease-out;
 }
 
 .log-entry-content > div {
@@ -146,74 +143,87 @@ body::after {
 	overflow: hidden;
 }
 
-/* #log_list .log-entry .log-metadata {
-	transition: background 150ms ease-out;
-}
-#log_list .log-entry .log-metadata * {
-	transition: color 150ms ease-out;
-}
-
-#log_list .log-entry .log-entry-title::before {
-	content: '↧';
-	display: inline-block;
-	margin-right: 8px;
-	transition: transform 100ms ease-out;
-}
-
-#log_list .log-entry.a .log-entry-title::before {
-	transform: scaleY(-1);
-}
-
-#log_list .log-entry:hover:not(.d) .log-metadata {
-	cursor: pointer;
+span.g {
+	color: transparent;
 	background: var(--accent);
-}
-
-#log_list .log-entry:hover:not(.d) .log-metadata * {
-	color: hsl(220, 100%, 2%);
-}
-
-#log_list .log-metadata p {
+	position: relative;
 	display: inline-block;
 }
 
-#log_list .log-metadata {
-	padding: 0.5em;
+span.g::before {
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: yellow;
+	mix-blend-mode: color-dodge;
+	animation: noise linear infinite 0.2s;
 }
 
-#log_list .log-entry-recovery-date {
-	float: right;
+span.g::after {
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: magenta;
+	mix-blend-mode: color-dodge;
+	animation: noise linear infinite 0.3s reverse;
 }
 
-#log_list .log-entry .log-entry-content {
-	max-height: 0px;
-	overflow: hidden;
-	transition:
-		padding 150ms,
-		max-height 150ms;
+button#clearLogs {
+	position: absolute;
+	bottom: 16px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: hsl(220, 90%, 1%);
+	border: 1px solid var(--accent);
+	font-size: 16px;
+	padding: 0.2em;
 }
 
-#log_list .log-entry .log-entry-content > div {
-	margin: 0.5em;
+button#clearLogs:hover {
+	background: var(--accent);
+	color: hsl(220, 90%, 1%);
+	cursor: pointer;
 }
 
-#log_list .log-entry.a .log-entry-content {
-	border-top: 1px solid var(--accent);
-} */
+button#clearLogs:active {
+	transition: all 150ms ease-in;
+	color: hsl(from var(--accent) h s 50%);
+	background: hsl(from var(--accent) h s 20%);
+	border-color: hsl(from var(--accent) h s 20%);
+}
+
+@keyframes noise {
+	0% {
+		transform: translate(-1px, 0px);
+	}
+	20% {
+		transform: translate(1px, 1px);
+	}
+	40% {
+		transform: translate(0px, -3px);
+	}
+	60% {
+		transform: translate(-1px, 1px);
+	}
+	80% {
+		transform: translate(2px, 0px);
+	}
+	100% {
+		transform: translate(-2px, 0px);
+	}
+}
 
 @keyframes moveBg {
 	from {
 		background-position: 50% 50%;
 	}
 	to {
-		background-position: 50% calc(50% + 6px);
-	}
-}
-
-@media screen and (max-height: 500px) {
-	#log_list {
-		top: 50px;
-		transform: translateX(-50%);
-		height: calc(100vh - 100px);
+		background-position: 50% calc(50% + 4px);
 	}
 }

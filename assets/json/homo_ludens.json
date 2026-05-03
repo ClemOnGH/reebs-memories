@@ -9,51 +9,57 @@
 	},
 	"conversation": [
 		{ "type": "message", "from": "???", "content": "Dis, tu vois cette étoile ?" },
-		{ "type": "message", "from": "re-bi", "content": "Hein ?" },
+		{ "type": "message", "from": "CMD re-bi", "content": "Hein ?" },
 		{ "type": "message", "from": "???", "content": "Celle-là. À environ... 22 degrés du sol, pile au sud-est vu l'heure qu'il est." },
-		{ "type": "message", "from": "re-bi", "content": "Euh... oui! Je la vois!" },
+		{ "type": "message", "from": "CMD re-bi", "content": "Euh... oui! Je la vois!" },
 		{ "type": "message", "from": "???", "content": "Cette étoile, on l'appelle Rigel, ou Beta Orionis pour les intellos." },
-		{ "type": "message", "from": "re-bi", "content": "Rigel ? Qu'est-ce qu'elle a d'important ?" },
+		{ "type": "message", "from": "CMD re-bi", "content": "Rigel ? Qu'est-ce qu'elle a d'important ?" },
 		{
 			"type": "message",
 			"from": "???",
 			"content": " C'est l'étoile la plus brillante de la constellation d'Orion et la sixième plus brillante de toutes celles qu'on peut voir de nuit."
 		},
-		{ "type": "message", "from": "re-bi", "content": "Wouah!" },
-		{ "type": "message", "from": "re-bi", "content": "Tu y es déjà allé ?" },
+		{ "type": "message", "from": "CMD re-bi", "content": "Wouah!" },
+		{ "type": "message", "from": "CMD re-bi", "content": "Tu y es déjà allé ?" },
 		{ "type": "message", "from": "???", "content": "Bien sûr! C'est une vue à ne pas rater." },
 		{ "type": "message", "from": "???", "content": "Et celle-là, tu la vois ? Beaucoup plus bas, elle touche presque le sol." },
-		{ "type": "message", "from": "re-bi", "content": "Oui! Tu m'en a déjà parlé, c'est Sirius!" },
+		{ "type": "message", "from": "CMD re-bi", "content": "Oui! Tu m'en a déjà parlé, c'est Sirius!" },
 		{ "type": "message", "from": "???", "content": "C'est bien, tu apprends vite. Mais tu veux en voir une qui est vraiment importante ?" },
-		{ "type": "message", "from": "re-bi", "content": "Hm?" },
+		{ "type": "message", "from": "CMD re-bi", "content": "Hm?" },
 		{
 			"type": "message",
 			"from": "???",
 			"content": "Laisse-moi voir... au sud-sud-est... elle doit se trouver... là! Minuscule mais tu devrais pouvoir la voir."
 		},
-		{ "type": "message", "from": "re-bi", "content": "Je vois rien..." },
+		{ "type": "message", "from": "CMD re-bi", "content": "Je vois rien..." },
 		{ "type": "message", "from": "???", "content": "Regarde bien, il y en a quatres qui se chevauchent." },
-		{ "type": "message", "from": "re-bi", "content": "Celle-ci ?" },
+		{ "type": "message", "from": "CMD re-bi", "content": "Celle-ci ?" },
 		{
 			"type": "message",
 			"from": "???",
 			"content": "Presque! Celle-là c'est Zaurak. Un peu plus sur la droite il y a pi Eridani, puis Rana et enfin Ran, celle que je voulais te montrer."
 		},
-		{ "type": "message", "from": "re-bi", "content": "Je la vois, c'est bon! Mais elle est toute petite..." },
+		{ "type": "message", "from": "CMD re-bi", "content": "Je la vois, c'est bon! Mais elle est toute petite..." },
 		{ "type": "message", "from": "???", "content": "En effet. C'est une étoile naine orange. Mais tu sais ce qu'elle a de très important ?" },
-		{ "type": "message", "from": "re-bi", "content": "Non ?" },
+		{ "type": "message", "from": "CMD re-bi", "content": "Non ?" },
 		{
 			"type": "message",
 			"from": "???",
-			"content": "Il y a plus d'un millier d'années, c'était le système habitable le plus proche qu'on connaissait. Epsilon Eridani. L'Homme revait de pouvoir découvrir d'autres planètes pour toutes sortes de raisons. Certains pensaient que le réchauffement climatique deviendrait un problème majeur, d'autres pensaient que le problème venait de l'Homme et qu'il causerait sa propre perte et les quelques optimistes un peu attentionés - ceux qu'on refusait toujours d'écouter - disaient qu'un jour, l'Homme réussirait à conquérir l'univers. C'était un peu le bazar à l'époque..."
+			"content": "C'est un astronome grec du nom de Ptolémée qui l'a découvert il y a plusieurs milliers d'années déjà. Cette étoile faisait partie d'une gigantesque liste d'astres, étoiles et constellations qu'il s'amusait à cartographier. Ran n'est qu'une étoile parmis d'autres, elle n'a rien d'intéressant mais en l'an 2000, l'homme a commencé à étudier cette étoile de plus près et très vite, on a compris qu'il y avait une chance de trouver une éxoplanète similaire à la Terre."
 		},
-		{ "type": "message", "from": "re-bi", "content": "..." },
 		{
 			"type": "message",
 			"from": "???",
-			"content": "T'inquiètes! On s'est tous mis d'accord depuis. C'est pour ça que je peux aller un peu partout dans la galaxie!"
+			"content": "Ce qu'on a aussi vite compris à cette époque c'est qu'il y avait une chance pour ce système de former une planète habitable et devine quoi ? Il y en a une !"
 		},
-		{ "type": "message", "from": "re-bi", "content": "Tu crois que je pourrais voler un jour ?" },
+		{ "type": "message", "from": "CMD re-bi", "content": "C'est super mais pourquoi tu me parles de ça ?" },
+		{
+			"type": "message",
+			"from": "???",
+			"content": "Parce que ça fait partie des raisons pour lesquelles je vole encore dans l'espace. Découvrir de nouveaux mondes, les conquérir, en apprendre plus sur ce qui peut se cacher dans la galaxie... c'est tout un art pour moi."
+		},
+		{ "type": "message", "from": "CMD re-bi", "content": "..." },
+		{ "type": "message", "from": "CMD re-bi", "content": "Tu crois que je pourrais voler un jour ?" },
 		{ "type": "message", "from": "???", "content": "J'espère bien!" }
 	]
 }

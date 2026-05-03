@@ -1,0 +1,40 @@
+{
+	"metadata": {
+		"title": "First jump",
+		"createdAt": 42359854650000,
+		"location": {
+			"system": "Rutu"
+		}
+	},
+	"conversation": [
+		{ "type": "message", "content": "[04:17:30] System name: Rutu" },
+		{ "type": "message", "content": "[04:17:30] Body name: A" },
+		{ "type": "message", "content": "[04:17:30] Fuel capacity: 100%" },
+		{ "type": "message", "content": "[04:17:30] Tritium capacity: 25,000t out of 25,000t available" },
+		{ "type": "message", "content": "[04:17:30] Landing pads: operational" },
+		{ "type": "message", "content": "[04:17:30] Hull strength: 100%" },
+		{ "type": "message", "content": "[04:17:30] Souls onboard: 6" },
+		{ "type": "message", "content": "[04:17:30] Carrier ready to jump!" },
+		{ "type": "message", "from": "CMD re-bi", "content": "*soupir*" },
+		{ "type": "message", "from": "CMD re-bi", "content": "Enclenchez le premier saut vers <span class=\"g\">XXXXXXXX</span>." },
+		{ "type": "message", "from": "Co-pilote", "content": "Entendu monsieur." },
+		{ "type": "message", "content": "[04:18:04] Jump request to <span class=\"g\">XXXXXXXX</span> engaged." },
+		{ "type": "message", "content": "[04:18:07] Jump request to <span class=\"g\">XXXXXXXX</span> accepted." },
+		{ "type": "message", "content": "[04:18:07] Begin jump phase 1..." },
+		{ "type": "message", "content": "[04:18:07] All landing pads will become unavailable in 12 minutes." },
+		{ "type": "message", "from": "CMD re-bi", "content": "Si vous me cherchez, je suis dans mon bureau." },
+		{ "type": "message", "content": "[04:28:07] 10 minutes before fleet jump." },
+		{ "type": "message", "content": "[04:33:07] 5 minutes before fleet jump." },
+		{ "type": "message", "content": "[04:33:07] Fleet will depart soon. We recommend you to head to the commanding area." },
+		{ "type": "message", "content": "[04:35:07] Jump phase 2 engaged. Securing carrier for departure." },
+		{ "type": "message", "content": "[04:37:07] Jump phase 3 engaged. Powering frame shift drive..." },
+		{ "type": "message", "content": "[04:37:37] Jump phase 4 engaged. Initiating frame shift drive..." },
+		{ "type": "message", "content": "[04:38:07] Jump phase 5 engaged. Entering hyperspace portal..." },
+		{ "type": "message", "content": "[04:38:45] Jump phase 6 engaged. Traversing hyperspace..." },
+		{ "type": "message", "content": "[04:39:02] Jump phase 7 engaged. Exiting hyperspace portal..." },
+		{
+			"type": "message",
+			"content": "[04:40:00] Fleet carrier jumped to <span class=\"g\">XXXXXXXX</span> succesfully ! Landing pads rendered operational."
+		}
+	]
+}
